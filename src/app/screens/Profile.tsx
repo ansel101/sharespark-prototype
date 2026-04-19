@@ -98,30 +98,32 @@ export function Profile() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
-            <div className="p-4 bg-gradient-to-br from-green-400/10 to-green-500/5 rounded-xl border border-green-400/20">
-              <div className="flex items-center gap-2 mb-1">
-                <Zap className="w-4 h-4 text-green-600 dark:text-green-400" />
-                <p className="text-xs text-muted-foreground font-medium">
-                  Total Bookings
+          {isHostMode && (
+            <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
+              <div className="p-4 bg-gradient-to-br from-green-400/10 to-green-500/5 rounded-xl border border-green-400/20">
+                <div className="flex items-center gap-2 mb-1">
+                  <Zap className="w-4 h-4 text-green-600 dark:text-green-400" />
+                  <p className="text-xs text-muted-foreground font-medium">
+                    Total Bookings
+                  </p>
+                </div>
+                <p className="text-3xl font-bold text-green-600 dark:text-green-400">
+                  {user.guestBookings}
                 </p>
               </div>
-              <p className="text-3xl font-bold text-green-600 dark:text-green-400">
-                {user.guestBookings}
-              </p>
-            </div>
-            <div className="p-4 bg-gradient-to-br from-blue-400/10 to-blue-500/5 rounded-xl border border-blue-400/20">
-              <div className="flex items-center gap-2 mb-1">
-                <CreditCard className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <p className="text-xs text-muted-foreground font-medium">
-                  Host Earnings
+              <div className="p-4 bg-gradient-to-br from-blue-400/10 to-blue-500/5 rounded-xl border border-blue-400/20">
+                <div className="flex items-center gap-2 mb-1">
+                  <CreditCard className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                  <p className="text-xs text-muted-foreground font-medium">
+                    Host Earnings
+                  </p>
+                </div>
+                <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+                  ₱{user.hostEarnings.toLocaleString()}
                 </p>
               </div>
-              <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                ₱{user.hostEarnings.toLocaleString()}
-              </p>
             </div>
-          </div>
+          )}
         </Card>
 
         {kyc.status !== "verified" && (
