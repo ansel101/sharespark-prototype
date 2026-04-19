@@ -202,7 +202,7 @@ export function ChargerDetail() {
                 Verified Host
               </p>
               <p className="text-sm text-blue-600/80 dark:text-blue-400/80">
-                This charger is part of the ChargeShare trusted community
+                This charger is part of the ShareSpark trusted community
               </p>
             </div>
           </div>

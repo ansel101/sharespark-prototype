@@ -197,7 +197,7 @@ export function MapView() {
         <div className="flex items-center gap-2">
           <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
           <span className="font-semibold text-lg text-foreground">
-            ChargeShare
+            ShareSpark
           </span>
         </div>
       </div>
